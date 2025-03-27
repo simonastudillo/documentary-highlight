@@ -44,7 +44,7 @@ function ejemplo($a, $b) {
 ```
 ## Contribuciones
 
-Si deseas contribuir, por favor abre un issue o envía un pull request.
+Por ahora no se aceptan contribuciones, la extensión se creo para uso personal y del equipo de trabajo, no hay intensión de expandir de momento.
 
 ## Licencia
 
