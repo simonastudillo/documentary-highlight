@@ -4,6 +4,12 @@
    "description": "Asigna colores específicos a comentarios en PHP.",
    "version": "1.0.0",
    "publisher": "Simon astudillo",
+   "readme": "README.md",
+   "license": "MIT",
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/simonastudillo/documentary-highlight"
+   },
    "engines": {
       "vscode": "^1.80.0"
    },
