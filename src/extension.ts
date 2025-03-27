@@ -44,6 +44,26 @@ export function activate(context: vscode.ExtensionContext) {
       color: '#CE93D8', // Color para @todo
    });
 
+   const controlStructuresDecoration = vscode.window.createTextEditorDecorationType({
+      color: '#C586C0', // 
+   });
+
+   const dataTypesDecoration = vscode.window.createTextEditorDecorationType({
+      color: '#B5CEA8', // 
+   });
+
+   const functionsAndClassesDecoration = vscode.window.createTextEditorDecorationType({
+      color: '#569CD6', //
+   });
+
+   const constantDecoration = vscode.window.createTextEditorDecorationType({
+      color: '#4EC9B0', //
+   });
+
+   const operatorsDecoration = vscode.window.createTextEditorDecorationType({
+      color: '#64B5F6', // Color para for y while
+   });
+
    const updateDecorations = (editor: vscode.TextEditor) => {
       if (editor.document.languageId !== 'php') {
          console.log('El archivo no es PHP.'); // Depuración
@@ -64,6 +84,11 @@ export function activate(context: vscode.ExtensionContext) {
       const deprecatedDecorations: vscode.DecorationOptions[] = [];
       const seeDecorations: vscode.DecorationOptions[] = [];
       const todoDecorations: vscode.DecorationOptions[] = [];
+      const controlStructuresDecorations: vscode.DecorationOptions[] = [];
+      const operatorsDecorations: vscode.DecorationOptions[] = [];
+      const dataTypesDecorations: vscode.DecorationOptions[] = [];
+      const functionsAndClassesDecorations: vscode.DecorationOptions[] = [];
+      const constantDecorations: vscode.DecorationOptions[] = [];
 
       // Función para buscar y agregar decoraciones
       const addDecorations = (regex: RegExp, decorationsArray: vscode.DecorationOptions[]) => {
@@ -78,6 +103,7 @@ export function activate(context: vscode.ExtensionContext) {
 
       // Buscar y agregar decoraciones para cada tipo
       addDecorations(/(\* @description)/g, descriptionDecorations);
+      addDecorations(/(\* @desc)/g, descriptionDecorations);
       addDecorations(/(\* @params)/g, paramsDecorations);
       addDecorations(/(\* @return)/g, returnDecorations);
       addDecorations(/(\* @author)/g, authorDecorations);
@@ -87,6 +113,11 @@ export function activate(context: vscode.ExtensionContext) {
       addDecorations(/(\* @deprecated)/g, deprecatedDecorations);
       addDecorations(/(\* @see)/g, seeDecorations);
       addDecorations(/(\* @todo)/g, todoDecorations);
+      addDecorations(/\b(if|else|elseif|switch|case|default|for|while|foreach|break|continue|return)\b/g, controlStructuresDecorations);
+      addDecorations(/\b(int|float|string|bool|array|object|null|resource)\b/g, operatorsDecorations);
+      addDecorations(/\b(function|class|public|private|protected|static|extends|implements|new|use)\b/g, functionsAndClassesDecorations);
+      addDecorations(/\b(true|false|null|define|const)\b/g, constantDecorations);
+      addDecorations(/(&&|\|\||!|==|!=|<=|>=|<|>)/g, operatorsDecorations);
 
       // Aplicar decoraciones al editor
       editor.setDecorations(descriptionDecoration, descriptionDecorations);
@@ -99,6 +130,11 @@ export function activate(context: vscode.ExtensionContext) {
       editor.setDecorations(deprecatedDecoration, deprecatedDecorations);
       editor.setDecorations(seeDecoration, seeDecorations);
       editor.setDecorations(todoDecoration, todoDecorations);
+      editor.setDecorations(controlStructuresDecoration, controlStructuresDecorations);
+      editor.setDecorations(operatorsDecoration, operatorsDecorations);
+      editor.setDecorations(dataTypesDecoration, dataTypesDecorations);
+      editor.setDecorations(functionsAndClassesDecoration, functionsAndClassesDecorations);
+      editor.setDecorations(constantDecoration, constantDecorations);
    };
 
    const activeEditor = vscode.window.activeTextEditor;

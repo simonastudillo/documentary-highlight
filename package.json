@@ -2,7 +2,7 @@
    "name": "documentary-highlight",
    "displayName": "Documentary Highlight",
    "description": "Asigna colores específicos a comentarios en PHP.",
-   "version": "1.0.0",
+   "version": "1.1.0",
    "publisher": "Simon astudillo",
    "readme": "README.md",
    "license": "MIT",

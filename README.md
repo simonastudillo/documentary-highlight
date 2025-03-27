@@ -1,51 +1,54 @@
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-# Documentary Highlight
+# Documentary Highlight Extension
 
-Esta extensión de Visual Studio Code resalta diferentes tipos de comentarios en archivos PHP utilizando colores personalizados. Es útil para identificar rápidamente etiquetas específicas en comentarios de documentación.
+Esta extensión de Visual Studio Code resalta diferentes tipos de comentarios y elementos de código en archivos PHP para mejorar la legibilidad y facilitar la navegación.
 
 ## Características
 
-La extensión detecta y resalta las siguientes etiquetas de comentarios con los colores indicados:
+La extensión aplica decoraciones de color a los siguientes elementos:
 
-| Etiqueta       | Color      | Hexadecimal |
-|----------------|------------|-------------|
-| `@description` | Verde agua | `#4DB6AC`   |
-| `@params`      | Naranja    | `#FFB74D`   |
-| `@return`      | Verde claro| `#81C784`   |
-| `@todo`        | Rosa claro | `#CE93D8`   |
-| `@deprecated`  | Rojo oscuro| `#D32F2F`   |
-| `@throw`       | Rojo claro | `#E57373`   |
-| `@author`      | Lila       | `#9575CD`   |
-| `@version`     | Gris claro | `#90A4AE`   |
-| `@date`        | Gris oscuro| `#78909C`   |
-| `@see`         | Gris azul  | `#B0BEC5`   |
+### Comentarios de documentación
+- `@description` o `@desc`: Resaltado en color `#4DB6AC`.
+- `@params`: Resaltado en color `#FFB74D`.
+- `@return`: Resaltado en color `#81C784`.
+- `@todo`: Resaltado en color `#CE93D8`.
+- `@deprecated`: Resaltado en color `#D32F2F`.
+- `@throw`: Resaltado en color `#E57373`.
+- `@see`: Resaltado en color `#B0BEC5`.
+- `@date`: Resaltado en color `#78909C`.
+- `@version`: Resaltado en color `#90A4AE`.
+- `@author`: Resaltado en color `#9575CD`.
 
-## Ejemplo de Uso
+### Estructuras de control
+- Palabras clave como `if`, `else`, `for`, `while`, `switch`, etc., resaltadas en color `#C586C0`.
 
-En un archivo PHP, los comentarios con las etiquetas soportadas se resaltarán automáticamente. Por ejemplo:
+### Tipos de datos
+- Tipos como `int`, `float`, `string`, `bool`, `array`, etc., resaltados en color `#B5CEA8`.
 
-```php
-/**
- * @description Este método realiza una operación importante.
- * @params int $a Primer parámetro.
- * @params int $b Segundo parámetro.
- * @return int Resultado de la operación.
- * @todo Implementar validaciones adicionales.
- * @deprecated Este método será eliminado en la próxima versión.
- * @throw Exception Si ocurre un error.
- * @author John Doe
- * @version 1.0.0
- * @date 2023-10-01
- * @see OtroMétodoRelacionado
- */
-function ejemplo($a, $b) {
-    // Código aquí...
-}
-```
+### Funciones y clases
+- Palabras clave como `function`, `class`, `public`, `private`, `static`, etc., resaltadas en color `#569CD6`.
+
+### Constantes
+- Constantes como `true`, `false`, `null`, `define`, `const`, resaltadas en color `#4EC9B0`.
+
+### Operadores
+- Operadores como `&&`, `||`, `!`, `==`, `!=`, `<=`, `>=`, `<`, `>`, resaltados en color `#64B5F6`.
+
+## Instalación
+
+1. Clona este repositorio en tu máquina local.
+2. Abre el proyecto en Visual Studio Code.
+3. Ejecuta la tarea `Run Extension` desde el menú de depuración.
+
+## Uso
+
+1. Abre un archivo PHP en Visual Studio Code.
+2. La extensión aplicará automáticamente las decoraciones de color según los elementos mencionados.
+
 ## Contribuciones
 
 Por ahora no se aceptan contribuciones, la extensión se creo para uso personal y del equipo de trabajo, no hay intensión de expandir de momento.
 
 ## Licencia
 
-Este proyecto está licenciado bajo la [MIT License](LICENSE).
+Este proyecto está bajo la licencia MIT.
